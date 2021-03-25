@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="fontawesome/css/all.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid" style="width: 99%;">
+        <h3>Demo Javascript</h3>
+
+        <div class="row">
+            <div class="col-sm-3 col-md-3 col-lg-3" style="border:1px solid black;">
+                <form name="studentFrom" method="POST" style="margin: 8px;">
+                    <input type="hidden" name="student_id">
+                    <div class="form-group row">
+                        <label for="student_name" class="col-sm-3 col-form-label">Name <label class="text-danger">*</label></label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="student_name"
+                                placeholder="Enter student name" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || event.charCode == 32" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="email" class="col-sm-3 col-form-label">Email <label class="text-danger">*</label></label>
+                        <div class="col-sm-8">
+                            <input type="email" class="form-control" name="email"
+                                placeholder="Enter email" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="gender" class="col-sm-3 col-form-label">Gender <label class="text-danger">*</label></label>
+                        <div class="col-sm-9 mt-2">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="gender_male" value="Male"
+                                    checked>
+                                <label class="form-check-label" for="gender_male">Male</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="gender_female"
+                                    value="Female">
+                                <label class="form-check-label" for="gender_female">Female</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="hobbies" class="col-sm-3 col-form-label">Hobbies <label class="text-danger">*</label></label>
+                        <div class="col-sm-9 mt-2">
+                            <div class="form-check form-check-inline">
+                                <input type="checkbox" class="form-check-input" id="hobbbies_Plyaing" name="hobbies[]" value="Plyaing">
+                                <label class="form-check-label" for="hobbbies_Plyaing">Plyaing</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="checkbox" class="form-check-input" id="hobbbies_Swiming" name="hobbies[]" value="Swiming">
+                                <label class="form-check-label" for="hobbbies_Swiming">Swiming</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="checkbox"  class="form-check-input" id="hobbbies_Writing" name="hobbies[]" value="Writing">
+                                <label class="form-check-label" for="hobbbies_Writing">Writing</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="checkbox"  class="form-check-input" id="hobbbies_Reading" name="hobbies[]" value="Reading">
+                                <label class="form-check-label" for="hobbbies_Reading">Reading</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="country" class="col-sm-3 col-form-label">Country <label class="text-danger">*</label></label>
+                        <div class="col-sm-8">
+                            <select class="custom-select form-control-md" name="country" required>
+                                <option value="" selected disabled>Select Country</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="state" class="col-sm-3 col-form-label">State <label class="text-danger">*</label></label>
+                        <div class="col-sm-8">
+                            <select class="custom-select form-control-md" name="state" required>
+                                <option value="" selected>Select State</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-1 p-0 mt-2">
+                            <i class="stateLoader fas fa-spinner fa-pulse fa-lg" style="display: none"></i>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="city" class="col-sm-3 col-form-label">City <label class="text-danger">*</label></label>
+                        <div class="col-sm-8">
+                            <select class="custom-select form-control-md" name="city" required>
+                                <option value="" selected>Select City</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-1 p-0 mt-2">
+                            <i class="cityLoader fas fa-spinner fa-pulse fa-lg" style="display: none"></i>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="save" class="col-sm-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <input type="reset" value="Reset" onclick="javascript:removeResetButton(this);" class="btn btn-md btn-secondary float-right ml-3" style="display: none;">
+                            <input type="submit" class="btn btn-md btn-primary btn-block" value="Save">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-sm-9 col-md-9 col-lg-9" style="border:1px solid black;">
+                <div class="form-group row">
+                    <label for="city" class="col-sm-2 col-form-label">Search Student</label>
+                    <div class="col-sm-3">
+                        <input type="search" class="form-control form-control-md mt-1" name="searchName" 
+                        onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || event.charCode == 32" placeholder="Search by name">
+                    </div>
+                </div>
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name 
+                                <select name="shortByName">
+                                    <option value="">Short</option>
+                                    <option value="asc">Asc</option>
+                                    <option value="des">Des</option>
+                                </select>
+                            </th>
+                            <th>Email</th>
+                            <th>Gender</th>
+                            <th>Hobbies</th>
+                            <th>Country</th>
+                            <th>State</th>
+                            <th>City</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootbox.min.js"></script>
+    <script type="text/javascript" src="js/constant-data.js"></script>
+    <script type="text/javascript" src="js/serializeObject.js"></script>
+    <script type="text/javascript" src="js/form-validation.js"></script>
+    <script type="text/javascript" src="js/js-code.js"></script>
+</body>
+
+</html>
