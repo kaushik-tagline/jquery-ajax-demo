@@ -22,7 +22,7 @@ $(document).ready(function () {
 
 const API_BASE_URL = 'https://www.universal-tutorial.com';
 const API_HEADERS = {
-    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImFwaV90b2tlbiI6InZqeGVEaHhCU09PRzV4dEp5TjhQTGh3NXRwcU9DQkZXWmNYTTI5YjhPVlpXU3RubXBQV1pta0tyeUxaeUo4dXMtWVUifSwiZXhwIjoxNjE4NjM1NjkxfQ.gZUQhdXxgRRqyvOk7kBu7EYfhoeIEFR03y3vKM6sDZU"
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfZW1haWwiOiJ1ZHNhdmFsaXlhMDNAZ21haWwuY29tIiwiYXBpX3Rva2VuIjoiQU9wbXhvWGxpVlBqWTdaZXpKTzFkejYwZlpGQlJFLU1pQ2ZWV1IzYnNzZlI4WU9MVTIzQ2d4VUdiVFliaDJ3OCJ9LCJleHAiOjE2MjM2NTU3MTV9.fc90vyL9fxloyMuKUNGEAXmjBaYT9OH8ioPN4ZAe-7s"
 };
 
 function getCountries(element, country=undefined, state=undefined, city=undefined) {
